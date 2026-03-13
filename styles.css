@@ -18,9 +18,23 @@ body::before{
   z-index:-1;
 }
 
-/* contenido */
-.main-container{
-  max-width:720px;
-  margin-left:420px;   /* igual al width */
-  padding-left:40px;   /* espacio entre imagen y texto */
+/* contenido principal */
+.main-container {
+  max-width: 760px;
+  margin-left: 430px;        /* igual al ancho de la imagen */
+  padding-left: 35px;        /* separación entre imagen y texto */
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
+/* navbar */
+.navbar > .container,
+.navbar > .container-fluid {
+  margin-left: 430px;
+  padding-left: 35px;
+}
+
+/* títulos */
+h1, h2, h3 {
+  color: #2f4156;
 }
