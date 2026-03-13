@@ -1,23 +1,48 @@
 ---
-title: "Castelan Lab"
----
 
-# Hugo G. Castelán-Sánchez
-
-Postdoctoral Associate  
-Western University, Canada  
+## Hugo G. Castelán-Sánchez, PhD
+## Postdoctoral Associate  
+# Western University, Canada  
 
 Computational Virology • Microbial Genomics • Bioinformatics  
+
+---
+
+## Welcome 
+
+I am a computational biologist specializing in viral evolution, metagenomics, and microbial ecology. My research focuses on understanding the evolutionary dynamics of viruses and microbial communities using genomics, phylogenetics, and bioinformatics. 
+
+I am currently a Postdoctoral Associate at Western University in Canada, where I study viral evolution, genome organization, and the ecological interactions between viruses and their microbial hosts. My work integrates large-scale genomic data, phylogenetic reconstruction, and computational approaches to investigate how viruses diversify, adapt, and emerge across different ecological contexts.
+
+Throughout my career, I have contributed to multiple research initiatives focused on pathogen evolution, microbial diversity, and genomic surveillance. Notably, I participated in the Mexican Genomic Surveillance Consortium (CoViGen-Mex), where I contributed to the genomic monitoring of SARS-CoV-2 and the identification of emerging viral variants. My research also explores microbial communities in extreme environments, including deserts and other nutrient-limited ecosystems, using metagenomic approaches to uncover hidden microbial and viral diversity.
+
+More broadly, my work aims to advance our understanding of viral evolution and microbial ecosystems, while developing computational tools and bioinformatic frameworks that support genomic epidemiology, microbial ecology, and evolutionary biology.
+
+
+## Education 
+
+**Ph.D. Science**  
+Universidad Autonoma del Estado de Morelos (UAEM), Mexico. Graduated with honors
+
+Doctoral research focused on viral metagenomics in extremophile environments, including hydrothermal vents, hypersaline solar salterns, hot spring waters, and desert ecosystems. The work investigated the diversity, evolution, and ecological roles of microbial and viral communities in these extreme habitats. 
+
+**M.Sc. in Genomic Sciences**  
+Universidad Autonoma de la Ciudad de Mexico (UACM), Mexico  
+
+Graduate training in genomics, bioinformatics, and molecular evolution, with emphasis on computational analysis of biological data.
+
+**Diploma in Genomic Sciences**  
+Universidad Autonoma de la Ciudad de Mexico (UACM), Mexico  
+
+Specialized training in genomic technologies, sequence analysis, and computational biology.
+
+**Pharmaceutical Chemist and Biologist (QFB)**  
+Universidad Nacional Autonoma de México (UNAM), Mexico  
+
+Undergraduate education in biochemistry, microbiology, pharmacology, and molecular biology.
+
 
 Email: hcastelans@gmail.com  
 
 [GitHub](https://github.com/hugocastelan)  
 [Google Scholar](https://scholar.google.es/citations?user=HlIT1ekAAAAJ)
-
----
-
-# About
-
-I am a computational biologist specializing in viral evolution, metagenomics and microbial ecology.
-
-My research focuses on the evolutionary dynamics of viruses and microbial communities using genomics, phylogenetics and bioinformatics.
