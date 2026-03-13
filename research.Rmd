@@ -14,7 +14,7 @@ My research investigates the evolutionary dynamics of viruses and how genetic va
 <div style="flex:1;">
 
 
-![Phylogenetic tree of viral genomes](/Users/hugo/webpage/images/Tanglegram_influenza.png){width=70%}
+![Phylogenetic tree of viral genomes](images/Tanglegram_influenza.png){width=70%}
 </div>
 
 </div>
