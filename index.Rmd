@@ -1,10 +1,11 @@
 ---
-title: "Castelan Lab"
+title: "Castelán-Sánchez"
 output:
   html_document:
     theme: flatly
     css: styles.css
 ---
+
 ## Hugo G. Castelán-Sánchez, PhD
 ### Postdoctoral Associate  
 ### Western University, Canada  

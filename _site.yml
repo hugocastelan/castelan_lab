@@ -1,7 +1,7 @@
-name: "castelan-lab"
+name: "castelán-webpage"
 
 navbar:
-  title: "Castelan Lab"
+  title: "Castelán-Sánchez"
   left:
     - text: "Home"
       href: index.html
