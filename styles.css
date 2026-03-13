@@ -18,6 +18,10 @@ body {
   background-size: 320px auto;
 }
 
+
 .main-container {
-  margin-left: 340px;
+  max-width: 650px;
+  margin-left: 250px;
+  margin-right: auto;
+}
 }
