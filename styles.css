@@ -9,7 +9,7 @@ body::before{
   position:fixed;
   left:0;
   top:0;
-  width:350px;
+  width:440px;
   height:100vh;
   background-image:url("images/microscopic-pathogens.jpg");
   background-size:cover;
@@ -20,7 +20,7 @@ body::before{
 
 /* contenido */
 .main-container{
-  max-width:800px;
-  margin-left:280px;
+  max-width:720px;
+  margin-left:440px;  /* debe ser un poco mayor que width */
   margin-right:auto;
 }
