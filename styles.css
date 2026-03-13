@@ -9,7 +9,7 @@ body::before{
   position:fixed;
   left:0;
   top:0;
-  width:420px;      /* ancho de la imagen */
+  width:300px;      /* ancho de la imagen */
   height:100vh;
   background-image:url("images/microscopic-pathogens.jpg");
   background-size:cover;
@@ -21,8 +21,8 @@ body::before{
 /* contenido principal */
 .main-container {
   max-width: 760px;
-  margin-left: 430px;        /* igual al ancho de la imagen */
-  padding-left: 50px;        /* separación entre imagen y texto */
+  margin-left: 300px;        /* igual al ancho de la imagen */
+  padding-left: 20px;        /* separación entre imagen y texto */
   padding-right: 30px;
   padding-top: 30px;
 }
@@ -30,8 +30,8 @@ body::before{
 /* navbar */
 .navbar > .container,
 .navbar > .container-fluid {
-  margin-left: 430px;
-  padding-left: 35px;
+  margin-left: 300px;
+  padding-left: 20px;
 }
 
 /* títulos */
