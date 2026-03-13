@@ -1,0 +1,23 @@
+.main-container {
+  max-width: 1200px;
+}
+
+.navbar {
+  font-size: 16px;
+}
+
+body {
+  font-size: 18px;
+}
+
+
+body {
+  background-image: url("images/microscopic-pathogens.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 350px auto;
+}
+
+.main-container {
+  margin-left: 380px;
+}

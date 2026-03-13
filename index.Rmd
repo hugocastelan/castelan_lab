@@ -1,6 +1,11 @@
 ## Hugo G. Castelán-Sánchez, PhD
 ### Postdoctoral Associate  
 ### Western University, Canada  
+output:
+  html_document:
+    theme: flatly
+    css: styles.css
+
 
 Email: hcastelans@gmail.com  
 
