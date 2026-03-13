@@ -1,0 +1,163 @@
+---
+title: "Hugo G. Castelán-Sánchez"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+---
+
+# Hugo G. Castelán-Sánchez
+
+Postdoctoral Associate  
+Western University, Canada  
+
+Computational Virology | Microbial Genomics | Bioinformatics  
+
+Email: hcastelans@gmail.com  
+
+GitHub: https://github.com/hugocastelan  
+
+LinkedIn: https://www.linkedin.com/in/hugo-castelán-sánchez-18638b35
+
+---
+
+# About
+
+I am a computational biologist specializing in viral evolution, metagenomics and microbial ecology.  
+My research focuses on understanding the evolutionary dynamics of viruses and microbial communities using genomics, phylogenetics and bioinformatics.
+
+---
+
+# Research Interests
+
+- Viral evolution and genomic epidemiology  
+- RNA virus genomics  
+- Metagenomics and microbiome analysis  
+- Microbial ecology in extreme environments  
+- Bioinformatics and computational genomics  
+
+---
+
+# Professional Experience
+
+**Postdoctoral Associate**  
+Western University, Canada  
+2024–Present  
+
+**Research Scientist Fellow**  
+Mexican Genomic Surveillance Consortium  
+2021–2023  
+
+**Bioinformatician**  
+Institute of Cooperation for Agriculture (IICA–SENASICA)  
+2014–2017  
+
+---
+
+# Education
+
+PhD – Cellular and Molecular Biology  
+Universidad Autónoma del Estado de Morelos  
+
+MSc – Genomic Sciences  
+Universidad Autónoma de la Ciudad de México  
+
+Diploma – Genomic Sciences  
+Universidad Autónoma de la Ciudad de México  
+
+Pharmaceutical Chemist and Biologist  
+Universidad Nacional Autónoma de México  
+
+---
+
+# Publications
+
+Total publications: **35**  
+First author: **9**  
+Corresponding author: **11**  
+H-index: **15**
+
+Full publication list:
+
+https://scholar.google.es/citations?user=HlIT1ekAAAAJ
+
+---
+
+# Selected Publications
+
+Castelán-Sánchez HG et al. (2025).  
+Thermophilic *Pseudomonas aeruginosa* strain Ch39 isolated from hot springs.  
+*Letters in Applied Microbiology*
+
+Castelán-Sánchez HG et al. (2024).  
+Dynamics of evolution of SARS-CoV-2 in Mexico.  
+*Veterinaria México*
+
+Castelán-Sánchez HG et al. (2022).  
+Genome evolution and early introductions of the SARS-CoV-2 Omicron variant in Mexico.  
+*Virus Evolution*
+
+Gutierrez B., Castelán-Sánchez HG et al. (2022).  
+Emergence and widespread circulation of a recombinant SARS-CoV-2 lineage in North America.  
+*Cell Host & Microbe*
+
+---
+
+# Funded Projects
+
+Genomic surveillance of respiratory viruses (SARS-CoV-2, influenza and RSV) in Mexico  
+CONAHCYT  
+
+SARS-CoV-2 genomic surveillance in Cusco  
+FONDECYT  
+
+---
+
+# Teaching
+
+Evolution – Genomic Sciences Program (UACM)
+
+Molecular Biology – Biology Program (UAEM)
+
+Bioinformatics – Genomic Sciences Program (UACM)
+
+Guest lecturer – Virology course (IPN)
+
+---
+
+# Students
+
+Nestor Ivan Ortiz Rosas – bacteriophage genomics  
+
+Raúl Cruz Marban – viral proteins and plastic degradation  
+
+María Guadalupe Ayala – desert microbiomes  
+
+Eduardo Ferreira Tijera – tick transcriptomics  
+
+Carlos Corona Sanchez – heavy metal resistance enzymes  
+
+Laura Guerrero Martinez – mosquito viromes  
+
+---
+
+# Skills
+
+Programming: Python, R, Bash, Perl  
+
+Bioinformatics: NGS analysis, genome assembly, comparative genomics, metagenomics  
+
+Systems: Linux, MacOS, Windows  
+
+Version Control: Git / GitHub  
+
+---
+
+# Contact
+
+Email: hcastelans@gmail.com  
+
+GitHub: https://github.com/hugocastelan  
+
+LinkedIn: https://www.linkedin.com/in/hugo-castelán-sánchez-18638b35
