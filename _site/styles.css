@@ -9,7 +9,7 @@ body::before{
   position:fixed;
   left:0;
   top:0;
-  width:250px;
+  width:350px;
   height:100vh;
   background-image:url("images/microscopic-pathogens.jpg");
   background-size:cover;
