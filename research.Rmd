@@ -1,11 +1,23 @@
 ---
 title: "Research"
 ---
+<div style="display:flex; align-items:center;">
+
+<div style="flex:1; padding-right:20px;">
 
 
 # Viral evolution and genomic epidemiology
 
 My research investigates the evolutionary dynamics of viruses and how genetic variation shapes viral adaptation, transmission, and emergence. By integrating phylogenetic methods, genomic epidemiology, and large-scale sequencing data, I aim to understand how viral populations diversify over time and across geographic regions, providing insights into the spread and evolution of emerging pathogens.
+</div>
+
+<div style="flex:1;">
+
+
+![Phylogenetic tree of viral genomes](/Users/hugo/webpage/images/Tanglegram_influenza.png){width=70%}
+</div>
+
+</div>
 
 ## RNA virus genomics
 
