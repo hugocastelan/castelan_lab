@@ -2,8 +2,6 @@
 title: "Publications"
 ---
 
-# Publications
-
 Total publications: **35**  
 First author: **9**  
 Corresponding author: **11**  
@@ -12,3 +10,31 @@ H-index: **15**
 Full list:
 
 https://scholar.google.es/citations?user=HlIT1ekAAAAJ
+
+
+## 2026
+
+* Corresponding author 
+
+1.	*  Navarro, A., Rodea, G. E., de la Cruz‐Montoya, A. H., Díaz‐Velásquez, C. E., Vaca‐Paniagua, F., Navarro‐Cid del Prado, A., ... &  Castelán‐Sánchez, H. G. (2026). Gut Microbiota Composition in Adolescents From Mexico City, Associations With Nutritional and Socioeconomic Factors: Results From a Pilot Study. Molecular Nutrition & Food Research, 70(2), e70386.
+
+2.	Cano-Serrano, S., Castelán-Sánchez, H. G., Oyaregui-Cabrera, H., Hernández, L. G., Pérez-Pérez, M. C., Santoyo, G., & Orozco-Mosqueda, M. D. C. (2026). Assessment of Bacterial Diversity and Rhizospheric Community Shifts in Maize (Zea mays L.) Grown in Soils with Contrasting Productivity Levels. Plants, 15(1), 130.
+
+
+
+## 2025 
+
+
+1.	Arce-Aceves, M. F., Espinosa-Neira, R., Mata-Espinosa, D. A., Barrios-Payan, J. A., Castelán-Sánchez, H. G., Alcaraz-Estrada, S. L., & Hernández-Pando, R. (2025). Fitness costs of Mycobacterium tuberculosis resistant to rifampicin is compensated by rapid Th2 polarization mediated by early and high IL-4 production during mice infection. Scientific Reports, 15(1), 2811.  https://www.nature.com/articles/s41598-024-81446-3 
+
+2.	* Castelán-Sánchez, H. G., Fernández Dodero, J. V., Rojas-Vargas, J., Martínez-Ocampo, F., Hurtado-Ramírez, J. M., Ríos-Vázquez, D. I., Sánchez-Alonso, P., Vazquez-Cruz, C., & Rojas-Ruiz, N. E. (2025). Thermophilic Pseudomonas aeruginosa strain Ch39 isolated from Chignahuapan hot springs in Puebla, Mexico. Letters in Applied Microbiology, 78(4), ovaf059. Oxford University Press. https://academic.oup.com/lambio/article/78/4/ovaf059/8114799?login=true 
+
+3.	* Pila-Lacuta, S., Pauccar, D., Rojas-Vargas, J., Rodríguez-Cruz, U. E., Sierra, J. L., Castelán-Sánchez, H. G., & Quispe-Ricalde, M. A. (2025). Isolation of a potentially arsenic-resistant Halomonas elongata strain (ml10562) from hypersaline systems in the Peruvian Andes, Cusco. PLOS ONE, 20(4), e0320639. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0320639 
+
+4.	* Sánchez-Corona, C. G., Gonzalez-Avila, L. U., Hernández-Cortez, C., Rojas-Vargas, J., Castro-Escarpulli, G., & Castelán-Sánchez, H. G. (2025). Impact of heavy metal and resistance genes on antimicrobial resistance: Ecological and public health implications. Genes, 16(6), 625. https://www.mdpi.com/2073-4425/16/6/625 
+
+5.	Hernández-Villegas, E. N., Castelán-Sánchez, H. G., Moreira-Soto, A., Vigueras-Galván, A. L., Jiménez-Rico, M. A., Rico-Chávez, O., Rodríguez-González, S., Tolsá-García, M. J., Roiz, D., Martínez-Duque, P., Arana-Guardía, R., García-Súarez, O., Zamora Jiménez, M., Falcón, L. I., Roche, B., Sarmiento-Silva, R. E., Arnal, A., Drexler, J. F., & Suzán, G. (2025). Characterization of the virome in mosquitoes across distinct habitats in the Yucatán Peninsula, Mexico. Viruses, 17(6), 758. MDPI. https://www.mdpi.com/1999-4915/17/6/758 
+
+6.	Pacheco-Ramírez, C. E., Prado-Guzmán, I. S., Navarrete-Bolaños, J. L., Villaseñor Ortega, F., García-Rodríguez, Y. M., Rojas-Solís, D., Castelán-Sánchez, H. G., Santoyo, G., & Orozco-Mosqueda, M. del C. (2025). Analysis of novel volatile compounds, plant-beneficial traits, and genomic features of the endophyte Bacillus velezensis ITCE1 and its crosstalk with Trichoderma. Physiological and Molecular Plant Pathology, 140, 102867. https://doi.org/10.1016/j.pmpp.2025.102867
+
+
