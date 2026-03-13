@@ -1,5 +1,5 @@
 ---
-title: "Hugo G. Castelán-Sánchez"
+title: "Castelan Lab"
 output:
   html_document:
     theme: flatly

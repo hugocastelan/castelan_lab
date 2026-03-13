@@ -1,0 +1,12 @@
+---
+title: "Students"
+---
+
+# Current Students
+
+- Nestor Ivan Ortiz Rosas – bacteriophage genomics  
+- Raúl Cruz Marban – viral proteins and plastic degradation  
+- María Guadalupe Ayala – desert microbiomes  
+- Eduardo Ferreira Tijera – tick transcriptomics  
+- Carlos Corona Sanchez – heavy metal resistance enzymes  
+- Laura Guerrero Martinez – mosquito viromes

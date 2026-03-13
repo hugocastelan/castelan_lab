@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Castelan Lab</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Castelan Lab</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="projects.html">Projects</a>
+</li>
+<li>
+  <a href="students.html">Students</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Castelan Lab</h1>
+
+</div>
+
+
+<div id="hugo-g.-castelán-sánchez" class="section level1">
+<h1>Hugo G. Castelán-Sánchez</h1>
+<p>Postdoctoral Associate<br />
+Western University, Canada</p>
+<p>Computational Virology | Microbial Genomics | Bioinformatics</p>
+<p>Email: <a href="mailto:hcastelans@gmail.com"
+class="email">hcastelans@gmail.com</a></p>
+<p>GitHub: <a href="https://github.com/hugocastelan"
+class="uri">https://github.com/hugocastelan</a></p>
+<p>LinkedIn: <a
+href="https://www.linkedin.com/in/hugo-castel%C3%A1n-s%C3%A1nchez-18638b35"
+class="uri">https://www.linkedin.com/in/hugo-castelán-sánchez-18638b35</a></p>
+<hr />
+</div>
+<div id="about" class="section level1">
+<h1>About</h1>
+<p>I am a computational biologist specializing in viral evolution,
+metagenomics and microbial ecology.<br />
+My research focuses on understanding the evolutionary dynamics of
+viruses and microbial communities using genomics, phylogenetics and
+bioinformatics.</p>
+<hr />
+</div>
+<div id="research-interests" class="section level1">
+<h1>Research Interests</h1>
+<ul>
+<li>Viral evolution and genomic epidemiology<br />
+</li>
+<li>RNA virus genomics<br />
+</li>
+<li>Metagenomics and microbiome analysis<br />
+</li>
+<li>Microbial ecology in extreme environments<br />
+</li>
+<li>Bioinformatics and computational genomics</li>
+</ul>
+<hr />
+</div>
+<div id="professional-experience" class="section level1">
+<h1>Professional Experience</h1>
+<p><strong>Postdoctoral Associate</strong><br />
+Western University, Canada<br />
+2024–Present</p>
+<p><strong>Research Scientist Fellow</strong><br />
+Mexican Genomic Surveillance Consortium<br />
+2021–2023</p>
+<p><strong>Bioinformatician</strong><br />
+Institute of Cooperation for Agriculture (IICA–SENASICA)<br />
+2014–2017</p>
+<hr />
+</div>
+<div id="education" class="section level1">
+<h1>Education</h1>
+<p>PhD – Cellular and Molecular Biology<br />
+Universidad Autónoma del Estado de Morelos</p>
+<p>MSc – Genomic Sciences<br />
+Universidad Autónoma de la Ciudad de México</p>
+<p>Diploma – Genomic Sciences<br />
+Universidad Autónoma de la Ciudad de México</p>
+<p>Pharmaceutical Chemist and Biologist<br />
+Universidad Nacional Autónoma de México</p>
+<hr />
+</div>
+<div id="publications" class="section level1">
+<h1>Publications</h1>
+<p>Total publications: <strong>35</strong><br />
+First author: <strong>9</strong><br />
+Corresponding author: <strong>11</strong><br />
+H-index: <strong>15</strong></p>
+<p>Full publication list:</p>
+<p><a href="https://scholar.google.es/citations?user=HlIT1ekAAAAJ"
+class="uri">https://scholar.google.es/citations?user=HlIT1ekAAAAJ</a></p>
+<hr />
+</div>
+<div id="selected-publications" class="section level1">
+<h1>Selected Publications</h1>
+<p>Castelán-Sánchez HG et al. (2025).<br />
+Thermophilic <em>Pseudomonas aeruginosa</em> strain Ch39 isolated from
+hot springs.<br />
+<em>Letters in Applied Microbiology</em></p>
+<p>Castelán-Sánchez HG et al. (2024).<br />
+Dynamics of evolution of SARS-CoV-2 in Mexico.<br />
+<em>Veterinaria México</em></p>
+<p>Castelán-Sánchez HG et al. (2022).<br />
+Genome evolution and early introductions of the SARS-CoV-2 Omicron
+variant in Mexico.<br />
+<em>Virus Evolution</em></p>
+<p>Gutierrez B., Castelán-Sánchez HG et al. (2022).<br />
+Emergence and widespread circulation of a recombinant SARS-CoV-2 lineage
+in North America.<br />
+<em>Cell Host &amp; Microbe</em></p>
+<hr />
+</div>
+<div id="funded-projects" class="section level1">
+<h1>Funded Projects</h1>
+<p>Genomic surveillance of respiratory viruses (SARS-CoV-2, influenza
+and RSV) in Mexico<br />
+CONAHCYT</p>
+<p>SARS-CoV-2 genomic surveillance in Cusco<br />
+FONDECYT</p>
+<hr />
+</div>
+<div id="teaching" class="section level1">
+<h1>Teaching</h1>
+<p>Evolution – Genomic Sciences Program (UACM)</p>
+<p>Molecular Biology – Biology Program (UAEM)</p>
+<p>Bioinformatics – Genomic Sciences Program (UACM)</p>
+<p>Guest lecturer – Virology course (IPN)</p>
+<hr />
+</div>
+<div id="students" class="section level1">
+<h1>Students</h1>
+<p>Nestor Ivan Ortiz Rosas – bacteriophage genomics</p>
+<p>Raúl Cruz Marban – viral proteins and plastic degradation</p>
+<p>María Guadalupe Ayala – desert microbiomes</p>
+<p>Eduardo Ferreira Tijera – tick transcriptomics</p>
+<p>Carlos Corona Sanchez – heavy metal resistance enzymes</p>
+<p>Laura Guerrero Martinez – mosquito viromes</p>
+<hr />
+</div>
+<div id="skills" class="section level1">
+<h1>Skills</h1>
+<p>Programming: Python, R, Bash, Perl</p>
+<p>Bioinformatics: NGS analysis, genome assembly, comparative genomics,
+metagenomics</p>
+<p>Systems: Linux, MacOS, Windows</p>
+<p>Version Control: Git / GitHub</p>
+<hr />
+</div>
+<div id="contact" class="section level1">
+<h1>Contact</h1>
+<p>Email: <a href="mailto:hcastelans@gmail.com"
+class="email">hcastelans@gmail.com</a></p>
+<p>GitHub: <a href="https://github.com/hugocastelan"
+class="uri">https://github.com/hugocastelan</a></p>
+<p>LinkedIn: <a
+href="https://www.linkedin.com/in/hugo-castel%C3%A1n-s%C3%A1nchez-18638b35"
+class="uri">https://www.linkedin.com/in/hugo-castelán-sánchez-18638b35</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+---
+title: "Research"
+---
+
+# Research Interests
+
+- Viral evolution and genomic epidemiology  
+- RNA virus genomics  
+- Metagenomics and microbiome analysis  
+- Microbial ecology in extreme environments  
+- Bioinformatics and computational genomics

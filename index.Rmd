@@ -1,0 +1,23 @@
+---
+title: "Castelan Lab"
+---
+
+# Hugo G. Castelán-Sánchez
+
+Postdoctoral Associate  
+Western University, Canada  
+
+Computational Virology • Microbial Genomics • Bioinformatics  
+
+Email: hcastelans@gmail.com  
+
+[GitHub](https://github.com/hugocastelan)  
+[Google Scholar](https://scholar.google.es/citations?user=HlIT1ekAAAAJ)
+
+---
+
+# About
+
+I am a computational biologist specializing in viral evolution, metagenomics and microbial ecology.
+
+My research focuses on the evolutionary dynamics of viruses and microbial communities using genomics, phylogenetics and bioinformatics.

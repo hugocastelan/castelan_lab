@@ -1,0 +1,326 @@
+# load libraries
+library(dplyr)
+library(ggplot2)
+library(ggplot2)
+library(ggridges)
+library(tidyverse)
+if(!require(devtools)) install.packages("devtools")
+#devtools::install_github("sinhrks/ggfortify")
+library(ggfortify)
+if (!require("RColorBrewer")) {
+  install.packages("RColorBrewer")
+  library(RColorBrewer)
+}
+
+# load all segment data
+files <- Sys.glob("/Users/hugo/Desktop/tables_distance3/*_real_sim.csv")
+
+
+load.spr <- function(fn) {
+  spr <- read.csv(fn)
+  
+  # Extract segment name
+  segment <- strsplit(basename(fn), "_")[[1]][3]
+  
+  # Real data (remover filas con NA en HA_real)
+  df_real <- data.frame(type="real", branches=spr[,1], 
+                        ref=spr$HA_real, query=spr[,3])
+  df_real <- df_real[!is.na(df_real$branches) & !is.na(df_real$ref), ]
+  
+  # Simulated data (remover filas con NA en HA_real.1)
+  df_sim <- data.frame(type="simulated", branches=spr[,4], 
+                       ref=spr$HA_real.1, query=spr[,6])
+  df_sim <- df_sim[!is.na(df_sim$branches) & !is.na(df_sim$ref), ]
+  
+  # Combine real and simulated data
+  df <- rbind(df_real, df_sim)
+  
+  # Add segment information
+  df$segment <- segment
+  df
+}
+
+# Apply to all files
+full.df <- do.call(rbind, lapply(files, load.spr))
+
+# there tends to be more SPRs in simulated trees than real trees NOW IS  FALSE
+
+tab <- table(full.df$segment, full.df$type)
+
+
+slopegraph(tab[,1], tab[,2], col=T, names.arg=colnames(tab))
+
+
+
+library(ggfree)
+
+tab <- matrix(c(
+  91.4, 62.5,
+  84.5, 44.4,
+  87.4, 62.5,
+  85.6, 62.5,
+  89.4, 60.0,
+  88.1, 50.0,
+  87.9, 66.7
+), ncol = 2, byrow = TRUE)
+
+# Agregar nombres de fila y columna
+rownames(tab) <- c("NA", "NP", "MP", "NS", "PA", "PB1", "PB2")
+colnames(tab) <- c("Real", "Simulations")
+
+
+# Generar el slope graph
+slopegraph(tab[,1], tab[,2], col = TRUE, names.arg = colnames(tab))
+
+
+
+
+# SPRs on simulated data tend to involve larger subtrees (more tips)
+boxplot(split(log(full.df$branches), list(full.df$type, full.df$segment)), las=2)
+#table(full.df$branches==1, full.df$type, full.df$segment)
+require(lme4)
+
+fit <- glmer(branches-1 ~ type + (1 | segment), data=full.df, family="poisson")
+
+fit <- glm(branches ~ type + segment, data=full.df, family="poisson")
+
+
+
+##Dotplot
+ggplot(full.df, aes(x=type, y=branches, fill=type)) + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5, alpha=0.7) + labs(title="Dot Plot of Branches by Type", x="Type", y="Branches") + scale_fill_manual(values=c("real"="blue", "other"="red")) + theme_minimal() + theme(plot.title = element_text(hjust=0.5, size=14, face="bold"), axis.title = element_text(size=12), axis.text = element_text(size=10), legend.position = "none")
+
+###Histogram
+
+# Filter data to ensure there are no missing or non-finite values
+full.df_clean <- full.df %>%
+  filter(!is.na(branches) & branches > 0)  # Filter records where branches are greater than 0 and not NA
+
+# Group by gene segment, branches, and type, then count occurrences
+full.df_summary <- full.df_clean %>%
+  group_by(segment, branches, type) %>%
+  summarise(total = n(), .groups = 'drop')  # Count the number of occurrences by segment, number of branches, and type
+
+# Create the bar plot with inverted axes
+ggplot(full.df_summary, aes(x = total, y = as.factor(branches), fill = type)) +
+  geom_bar(stat = "identity", position = "dodge", alpha = 0.7) +
+  labs(
+    x = "Total",
+    y = "Number of Branches") +
+  scale_fill_manual(values = c("real" = "blue", "simulated" = "red")) +  # Colors for types
+  facet_grid(segment ~ ., scales = "free_y") +  # Separate by gene segments in rows
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_blank(),
+    legend.position = "right",
+    panel.spacing = unit(1, "lines")  
+  )
+
+###Percentage of histogram
+# Filter NA and empty branches
+full.df_clean <- full.df %>%
+  filter(!is.na(branches) & branches > 0)
+
+# join by segments, branches and type (real and simulations)
+full.df_summary <- full.df_clean %>%
+  group_by(segment, branches, type) %>%
+  summarise(total = n(), .groups = 'drop')
+
+# total observations
+total_by_type <- full.df_summary %>%
+  group_by(segment, type) %>%
+  summarise(total_count = sum(total), .groups = 'drop')
+
+# Calculate the percentage
+full.df_summary <- full.df_summary %>%
+  left_join(total_by_type, by = c("segment", "type")) %>%
+  mutate(percentage = (total / total_count) * 100)
+
+#plot histogram
+ggplot(full.df_summary, aes(x = percentage, y = as.factor(branches), fill = type)) +
+  geom_bar(stat = "identity", position = "dodge", alpha = 0.7) +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")),  
+            position = position_dodge(width = 0.9),  
+            vjust = -0.5,  
+            size = 2) +
+  labs(
+    x = "Porcentage",
+    y = "Number of branches"
+  ) +
+  scale_fill_manual(values = c("real" = "blue", "simulated" = "red")) +  
+  facet_grid(segment ~ ., scales = "free_y") +  
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    legend.title = element_blank(),
+    legend.position = "right",
+    panel.spacing = unit(1, "lines")
+  )
+
+# the distance traveled by the SPR does not seem to be very different
+# between simulated and real data
+plot(full.df$branches[full.df$type=='real'],
+     full.df$ref[full.df$type=='real'], log='xy',
+     xlab="Number of tips in SPR", ylab="Distance travelled")
+points(full.df$branches[full.df$type!='real'],
+       full.df$ref[full.df$type!='real'], col='red', pch=19, cex=0.5)
+
+###Distances by gene
+ggplot(full.df, aes(x=branches, y=ref)) +
+  geom_point(aes(color=type, shape=type), size=3, alpha=0.7) +
+  scale_x_log10() +  # Apply log scale to x-axis
+  scale_y_log10() +  # Apply log scale to y-axis
+  scale_color_manual(values=c("real"="blue", "simulated"="red")) +
+  scale_shape_manual(values=c("real"=16, "simulated"=17)) +  # Different shapes for different types
+  labs(
+    x="Number of Tips in SPR (Log Scale)",
+    y="Distance Travelled (Log Scale)",
+    color="Type",
+    shape="Type") +
+  theme_classic() +  # Use minimal theme for clarity
+  theme(plot.title = element_text(hjust=0.5, size=16, face="bold"),
+        axis.title = element_text(size=14),
+        axis.text = element_text(size=12),
+        legend.position = "right",
+        legend.title = element_text(size=12),
+        legend.text = element_text(size=10),
+        legend.key.size = unit(1.2, "lines")) +
+  facet_wrap(~ segment, scales="free")  # Facet by segment with free scales for each plot
+
+
+singles <- df[df$branches==1,]
+#hist(singles$ref[singles$type=='real'], breaks=20, freq=F) -> h
+#hist(singles$ref[singles$type!='real'], breaks=h$breaks, add=T, freq=F,
+#      col=rgb(1,0,0,0.5))
+
+
+singles_clean <- singles[!is.na(singles$ref) & singles$branches == 1, ]
+par(bg = "white")
+pal <- add.alpha(brewer.pal(3, 'Set1'), 0.5)
+
+# Crear el ridge plot
+ridgeplot(split(singles_clean$ref, singles_clean$type),
+          step = 0.4,
+          fill = pal,
+          col="white",
+          lwd = 2,
+          xlab = 'Distance',
+          cex.lab = 1.2)
+title(main = "Density of distances").
+
+
+###Percentage of branches by gene 
+# Clean data
+full.df_clean <- full.df %>%
+  filter(!is.na(branches) & branches > 0)
+
+# Group and count occurrences
+full.df_summary <- full.df_clean %>%
+  group_by(segment, branches, type) %>%
+  summarise(total = n(), .groups = 'drop')
+
+# Calculate total observations by type and segment
+total_by_type <- full.df_summary %>%
+  group_by(segment, type) %>%
+  summarise(total_count = sum(total), .groups = 'drop')
+
+# Merge to calculate percentages
+full.df_summary <- full.df_summary %>%
+  left_join(total_by_type, by = c("segment", "type")) %>%
+  mutate(percentage = (total / total_count) * 100)
+
+# Create histogram with all adjustments
+ggplot(full.df_summary, aes(x = percentage, y = as.factor(branches), fill = type)) +
+  geom_bar(stat = "identity", position = "dodge", alpha = 0.9, color = "white", size = 0.3) +
+  geom_text(
+    aes(label = sprintf("%.1f%%", percentage)),  # Format percentages
+    position = position_dodge(width = 0.9),
+    vjust = 0.5, hjust = -0.1, size = 2, color = "black"  # Smaller size for labels
+  ) +
+  labs(
+    x = "Percentage (%)",
+    y = "Number of branches",  
+    #title = "Adjusted Percentage Distribution by Branches and Type",
+    #subtitle = "Visualizing proportions of real and simulated data across segments",
+    #caption = "Data source: Your Dataset"
+  ) +
+  scale_fill_manual(values = c("real" = "#3498db", "simulated" = "#e74c3c")) +  # Modern colors
+  facet_grid(segment ~ ., scales = "free_y") + 
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 14, face = "italic", color = "gray40"),
+    plot.caption = element_text(size = 10, color = "gray60"),
+    axis.title = element_text(size = 14),
+    axis.text.x = element_text(size = 8, color = "gray20", angle = 90, hjust = 1, vjust = 0.5),  # Vertical x-axis labels
+    axis.text.y = element_text(size = 7, color = "gray20"),  # Smaller y-axis numbers
+    legend.title = element_blank(),
+    legend.text = element_text(size = 12),
+    legend.position = "right",  # Legend moved to the right
+    legend.box.margin = margin(t = 5, b = 5),
+    panel.spacing = unit(1.5, "lines"),
+    strip.background = element_rect(fill = "gray90", color = "gray80"),
+    strip.text = element_text(size = 14, face = "bold", color = "gray20")
+  )
+
+
+###Desity plots 
+library(ggplot2)
+library(ggridges)
+
+
+full.df$segment <- factor(full.df$segment, levels = c("PB2", "PB1", "PA", "NS", "NP", "NA", "MP"))
+
+p <- ggplot(full.df, aes(x = ref, y = segment, color = group, linetype = group)) +
+  geom_density_ridges(fill = NA, alpha = 1, scale = 1, rel_min_height = 0) +  # Sin relleno, solo contorno
+  scale_color_manual(values = c("Single, real" = "blue", "Single, simulated" = "red", 
+                                "Multiple, real" = "darkblue", "Multiple, simulated" = "darkred")) +
+  scale_linetype_manual(values = c("Single, real" = "dashed", "Single, simulated" = "dashed", 
+                                   "Multiple, real" = "solid", "Multiple, simulated" = "solid")) + 
+  facet_wrap(~ segment, scales = "free", ncol = 4) +  
+  theme_minimal(base_size = 14) +  # MODO CLÁSICO
+  labs(x = "Sibling distance", y = "Segment", color = "Group", linetype = "Group") +  
+  theme(strip.text = element_text(size = 14, face = "bold"),
+        legend.position = "right",
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        axis.line = element_line(color = "black"),  
+        panel.spacing = unit(1, "lines"))
+
+print(p)
+
+
+### Percentange of SPR in a single branches  real and simulated trees 
+
+library(ggplot2)
+
+library(ggplot2)
+
+data <- data.frame(
+  Segment = rep(c("NA", "NP", "MP", "NS", "PA", "PB1", "PB2"), each = 2),
+  Type = rep(c("Real", "Simulations"), 7),
+  Value = c(91.4, 62.5, 84.5, 44.4, 87.4, 62.5, 
+            85.6, 62.5, 89.4, 60.0, 88.1, 50.0, 87.9, 66.7)
+)
+
+ggplot(data, aes(x = Type, y = Value, group = Segment, color = Segment)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  geom_text(aes(label = paste0(Value, "%")), vjust = -2, size = 2) +
+  scale_color_manual(values = rep(c("red", "blue"), length.out = 7)) +
+  theme_minimal() +
+  labs(title = "SPRs involve changes in only one branch",
+       x = "Type", y = "Percentage") +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+
+
+
+
+
