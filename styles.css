@@ -12,12 +12,12 @@ body {
 
 
 body {
-  background-image: url("images/microscopic-pathogens.jpg");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 350px auto;
+  background-image: url("images/background.jpg");
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 320px auto;
 }
 
 .main-container {
-  margin-left: 380px;
+  margin-left: 340px;
 }
