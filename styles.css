@@ -1,26 +1,31 @@
-body {
+body{
   margin:0;
   padding:0;
-  font-size:18px;
 }
 
-/* barra izquierda */
-body::before {
+/* barra izquierda con imagen */
+body::before{
   content:"";
   position:fixed;
   left:0;
   top:0;
-  width:260px;
+  width:280px;
   height:100vh;
   background-image:url("images/microscopic-pathogens.jpg");
   background-size:cover;
   background-position:center;
+  background-repeat:no-repeat;
 }
 
-/* contenido */
+/* contenedor del contenido */
 .main-container{
   max-width:700px;
-  margin-left:300px;
+  margin-left:320px;
   margin-right:auto;
   padding-top:40px;
+}
+
+/* títulos más elegantes */
+h1, h2, h3{
+  margin-top:25px;
 }
