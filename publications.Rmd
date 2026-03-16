@@ -14,6 +14,28 @@ https://scholar.google.es/citations?user=HlIT1ekAAAAJ
 
 ---
 
+### Selected publication
+
+**Castelán-Sánchez, H. G.**, & Poon, A. F. (2025). Phylogenetic discordance can substantially overestimate genomic reassortment in avian influenza virus. bioRxiv, 2025-02.
+
+**Castelán-Sánchez, H. G.**, Delaye, L., Inward, R. P., Dellicour, S., Gutierrez, B., Martinez de la Vina, N., ... & Escalera Zamudio, M. (2023). Comparing the evolutionary dynamics of predominant SARS-CoV-2 virus lineages co-circulating in Mexico. *Elife*, 12, e82069.
+
+**Castelán-Sánchez, H. G.**, Martínez-Castilla, L. P., Sganzerla-Martínez, G., Torres-Flores, J., & López-Leal, G. (2022). Genome evolution and early introductions of the SARS-CoV-2 Omicron variant in Mexico. *Virus evolution*, 8(2), veac109.
+
+Gutierrez, B., **Castelán-Sánchez, H. G.**, da Silva Candido, D., Jackson, B., Fleishon, S., Houzet, R., ... & Escalera-Zamudio, M. (2022). Emergence and widespread circulation of a recombinant SARS-CoV-2 lineage in North America. Cell Host & Microbe, 30(8), 1112-1123.
+
+Rojas-Vargas, J., **Castelán-Sánchez, H. G.**, & Pardo-López, L. (2023). HADEG: a curated hydrocarbon aerobic degradation enzymes and genes database. *Computational Biology and Chemistry*, 107, 107966. 
+
+**Castelán-Sánchez, H. G.**, Lopéz-Rosas, I., García-Suastegui, W. A., Peralta, R., Dobson, A. D., Batista-García, R. A., & Dávila-Ramos, S. (2019). Extremophile deep-sea viral communities from hydrothermal vents: Structural and functional analysis. *Marine Genomics*, 46, 16-28.
+
+
+
+
+
+
+
+
+
 ## 2026
 
 ⭐ **Corresponding author**
@@ -64,5 +86,7 @@ https://www.mdpi.com/1999-4915/17/6/758
 Volatile compounds and genomic features of the endophyte *Bacillus velezensis* ITCE1.  
 *Physiological and Molecular Plant Pathology.*  
 https://doi.org/10.1016/j.pmpp.2025.102867
+
+
 
 
