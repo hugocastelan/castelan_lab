@@ -1,4 +1,5 @@
 name: "castelán-webpage"
+output_dir: "."
 
 navbar:
   title: "Castelán-Sánchez"
