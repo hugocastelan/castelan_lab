@@ -54,7 +54,7 @@ Metagenomic approaches allow the exploration of microbial and viral diversity di
 
 <div class="col-md-6">
 
-![COVID-19, socioeconomic status, and gut microbiome](images/Figure_COVID_x_NSE_integrated.png){width=100%}
+![Gut microbiome in COVID-19](images/Figure_1_Genus_composition_COVID_only.png){width=100%}
 
 </div>
 
