@@ -50,6 +50,19 @@ Assessment of bacterial diversity and rhizospheric community shifts in maize gro
 *Plants.*
 https://www.mdpi.com/2223-7747/15/1/130
 
+3.	Cortés-López, N. G., Ordóñez-Baquera, P. L., Batista-García, R. A., Dávila-Ramos, S.,  **Castelán-Sánchez, H.**, Díaz-Plascencia, D., ... & Domínguez-Viveros, J. (2026). Rumen microbial diversity and functional annotation in cattle fed yeast supplements using shotgun metagenomics. Journal of Applied Animal Research, 54(1), 2675265.
+https://www.tandfonline.com/doi/full/10.1080/09712119.2026.2675265
+
+
+4. ⭐ Dosales-Decaro, E. O., Castro-Escarpulli, G., Saldaña-Padilla, A., Cravioto, A., **Castelán-Sánchez, H. G.**, & Navarro-Ocaña, A. (2026). Comparative Genomics of Escherichia coli Serogroups 64474, O179, O188 and Shigella boydii O16. Pathogens, 15(5), 462.
+https://www.mdpi.com/2076-0817/15/5/462
+
+5. ⭐  Rodriguez-Cruz, U. E., Ochoa-Sánchez, M., Sierra, J. L., Pagaza-Straffon, E. C., Hurtado-Ramírez, J. M., Quispe-Ricalde, M. A., **Castelán-Sánchez, H. G.**,  & Dávila-Ramos, S. (2026). Unveiling a Microbial Treasure Trove: Phylogenetic Diversity and Bioremediation Potential in a High-Altitude Andean Saline System. Microbial Ecology, 89(1), 99.
+https://link.springer.com/article/10.1007/s00248-026-02712-7
+
+6. Muñoz-Baena, L., **Castelán-Sánchez, H. G.**, Bagherichimeh, S., Magbor, P., Rojas-Vargas, J., Khan, A., ... & Poon, A. F. (2026). Selection profiles in RNA viruses reflect the characteristics of viruses more than individual proteins. PLoS pathogens, 22(7), e1014457.
+
+
 
 ---
 
