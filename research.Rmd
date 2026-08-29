@@ -74,7 +74,7 @@ Extreme environments such as hydrothermal vents host unique microbial and viral 
 
 <div class="col-md-6">
 
-![Virome of hydrothermal vents](/Users/hugo/castelan_lab/images/virome_hydrothermal_vents.jpg){width=100%}
+![Virome of hydrothermal vents](images/virome_hydrothermal_vents.jpg){width=100%}
 
 </div>
 
