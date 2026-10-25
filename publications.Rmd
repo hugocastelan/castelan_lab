@@ -29,7 +29,7 @@ Rojas-Vargas, J., **Castelán-Sánchez, H. G.**, & Pardo-López, L. (2023). HADE
 **Castelán-Sánchez, H. G.**, Lopéz-Rosas, I., García-Suastegui, W. A., Peralta, R., Dobson, A. D., Batista-García, R. A., & Dávila-Ramos, S. (2019). Extremophile deep-sea viral communities from hydrothermal vents: Structural and functional analysis. *Marine Genomics*, 46, 16-28.
 
 
-
+Muñoz-Baena, L., **Castelán-Sánchez, H. G.**, Bagherichimeh, S., Magbor, P., Rojas-Vargas, J., Khan, A., ... & Poon, A. F. (2026). Selection profiles in RNA viruses reflect the characteristics of viruses more than individual proteins. PLoS pathogens, 22(7), e1014457.
 
 
 
@@ -62,6 +62,10 @@ https://link.springer.com/article/10.1007/s00248-026-02712-7
 
 6. Muñoz-Baena, L., **Castelán-Sánchez, H. G.**, Bagherichimeh, S., Magbor, P., Rojas-Vargas, J., Khan, A., ... & Poon, A. F. (2026). Selection profiles in RNA viruses reflect the characteristics of viruses more than individual proteins. PLoS pathogens, 22(7), e1014457.
 
+7. ⭐  Castelán-Sánchez, H. G.**, & Poon, A. F. Y. (2026).
+Assessing the impact of phylogenetic reconstruction error on genetic reassortment inference in segmented viruses.
+*PLOS ONE, 21*(10), e0360852.
+[DOI](https://doi.org/10.1371/journal.pone.0360852)
 
 
 ---
